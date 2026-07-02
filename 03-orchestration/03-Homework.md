@@ -1,5 +1,7 @@
 ## Module 3 Homework: AI Orchestration with Kestra
 
+> Submission by Shanice W
+
 ATTENTION: At the end of the submission form, you will be required to include a link to your GitHub repository or other public code-hosting site. This repository should contain your code for solving the homework. If your solution includes code that is not in file format, please include these directly in the README file of your repository.
 
 > It's possible your answers won't match exactly. If so, select the closest one
@@ -47,9 +49,14 @@ Open the execution logs and find the token usage logged by the `log_token_usage`
 What is the approximate **output** token count for `multilingual_agent`?
 
 - 5-15 tokens
-- 60-100 tokens
+- 60-100 tokens [X]
 - 200-400 tokens
 - 500+ tokens
+
+This is the summary that is output with a short summary length:
+> Kestra is an open-source orchestration platform that uses declarative YAML for workflow definition and offers a no-code interface for automation. It supports custom use cases via plugins and scripts, and its flexible design makes it suitable for various applications like data engineering and business process automation. In the LLM Zoomcamp bonus module, Kestra is used to explore how AI can accelerate workflow development through features like AI Copilot and autonomous agents.
+
+![Screenshot of log_token_usage after running multilingual agent with short summary length](03-orchestration/assets/log_token_usage_short.png)
 
 ## Question 4: Token usage — long summary
 
@@ -58,9 +65,16 @@ Run `4_simple_agent.yaml` again with `summary_length = long`.
 Compare the `multilingual_agent` output token count to your result from Question 3. Roughly how many times more output tokens does the long summary use?
 
 - About the same (within 20%)
-- 2-5x more
+- 2-5x more [X]
 - 10-20x more
 - 50x more
+
+This is the summary that is output with a long summary length:
+> Kestra is an open-source orchestration platform for defining workflows declaratively in YAML, supporting both developers and non-developers with a no-code interface. It ensures workflows are versioned, governed, secure, and auditable, and offers extensibility through plugins and custom scripts. The platform is designed for scalable growth, allowing users to start with simple workflows and integrate more complex elements like Python scripts, Docker containers, or advanced branching logic as needed. Kestra is suitable for various applications, including data engineering, ETL pipelines, and business process automation. In the context of the LLM Zoomcamp, Kestra's capabilities are being explored in a bonus module to demonstrate how AI, specifically through AI Copilot, RAG, and autonomous agents, can enhance and accelerate workflow development for production-ready LLM applications.
+
+Visually we can see the diffence in outputs, but we can also see it in the token usage:
+
+![Screenshot of log_token_usage after running multilingual agent with long summary length](03-orchestration/assets/log_token_usage_long.png)
 
 ## Question 5: Modifying a flow
 
@@ -71,16 +85,19 @@ Save the flow, then run it with `summary_length = long`.
 Compare the `english_brevity` output token count to the original 1-sentence version (also with `summary_length = long`). How do they compare?
 
 - About the same (within 20%)
-- 2-4x more
+- 2-4x more [X]
 - 5-10x more
 - 10x+ more
+
+![Screenshot of log_token_usage after updating english_brevity task](03-orchestration/assets/token_usage_english_brevity.png)
+
 
 ## Question 6: Best Practices
 
 Based on what you learned in this module, for production workflows requiring deterministic, repeatable results with strict compliance requirements (e.g., financial reporting, workflows in highly regulated industries), which approach is most appropriate?
 
 - Always use AI agents for maximum flexibility and adaptation
-- Use traditional task-based workflows for predictability and auditability
+- Use traditional task-based workflows for predictability and auditability [X]
 - Use only RAG without agents for better performance
 - Use web search tools exclusively to ensure current data
 
